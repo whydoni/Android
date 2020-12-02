@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/refresh"
+        android:icon="@android:drawable/ic_menu_more"
+        app:showAsAction="never"
+        android:title="Refresh">
+    </item>
+
+    <item
+        android:id="@+id/help"
+        android:icon="@android:drawable/ic_menu_help"
+        app:showAsAction="never"
+        android:title="Help"/>
+    <item
+        android:id="@+id/update"
+        android:icon="@android:drawable/ic_menu_call"
+        app:showAsAction="never"
+        android:title="Update">
+    </item>
+
+
+
+</menu>
