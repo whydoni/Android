@@ -59,7 +59,14 @@ public class PulsaAdapter extends RecyclerView.Adapter<PulsaAdapter.PulsaViewHol
     public void onBindViewHolder(@NonNull PulsaViewHolder holder, int position) {
         int pulsa = (int) list.get(position).getNominal();
         int price = (int) list.get(position).getPrice();
-        holder.nominal.setText(pulsa);
+        String nom ="";
+        if(String.valueOf(pulsa).length()==6){
+            nom=String.valueOf(pulsa).substring(0,3);
+        } else {
+            nom=String.valueOf(pulsa).substring(0,2);
+        }
+        holder.tv_nominal.setText(nom);
+        holder.tv_nominal2.setText(".000");
 
         holder.linear_nominal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,12 +110,13 @@ public class PulsaAdapter extends RecyclerView.Adapter<PulsaAdapter.PulsaViewHol
     }
 
     public class PulsaViewHolder extends RecyclerView.ViewHolder {
-        AppCompatTextView nominal;
+        AppCompatTextView tv_nominal,tv_nominal2;
         LinearLayoutCompat linear_nominal;
 
         public PulsaViewHolder (@NonNull View itemView) {
             super(itemView);
-            nominal = itemView.findViewById(R.id.nominal);
+            tv_nominal=itemView.findViewById(R.id.tv_nominal);
+            tv_nominal2=itemView.findViewById(R.id.tv_nominal2);
             linear_nominal=itemView.findViewById(R.id.linear_nominal);
         }
     }

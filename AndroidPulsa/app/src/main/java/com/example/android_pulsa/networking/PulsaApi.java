@@ -2,6 +2,7 @@ package com.example.android_pulsa.networking;
 
 import com.example.android_pulsa.model.PulsaModel;
 import com.example.android_pulsa.model.PulsaResponse;
+import com.example.android_pulsa.model.PulsasResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -15,5 +16,5 @@ public interface PulsaApi {
     Call<PulsaResponse> getProduct(@Query("page") String page, @Query("limit") String limit);
 
     @POST("pulsa")
-    Call<PulsaResponse> postPulsa(@Body PulsaModel body);
+    Call<PulsasResponse> postPulsa(@Body PulsaModel body);
 }

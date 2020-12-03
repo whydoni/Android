@@ -49,12 +49,12 @@ public class PulsaRepository {
         return productData;
     }
 
-    public MutableLiveData<PulsasResponse> postPulsa (PulsaModel model) {
-        MutableLiveData<PulsaResponse> productData = new MutableLiveData<>();
-        pulsaApi.postPulsa(model)
-                .enqueue(new Callback<PulsaResponse>() {
+    public MutableLiveData<PulsasResponse> postPulsa (PulsaModel Payload) {
+        MutableLiveData<PulsasResponse> productData = new MutableLiveData<>();
+        pulsaApi.postPulsa(Payload)
+                .enqueue(new Callback<PulsasResponse>() {
                     @Override
-                    public void onResponse(Call<PulsaResponse> call, Response<PulsaResponse> response) {
+                    public void onResponse(Call<PulsasResponse> call, Response<PulsasResponse> response) {
                         if (response.isSuccessful()) {
                             Log.v("Log post pulsa : ", response.body().toString());
                             productData.setValue(response.body());
@@ -62,7 +62,7 @@ public class PulsaRepository {
                     }
 
                     @Override
-                    public void onFailure(Call<PulsaResponse> call, Throwable t) {
+                    public void onFailure(Call<PulsasResponse> call, Throwable t) {
                         Log.v("Log post error : ", t.getMessage());
                         productData.setValue(null);
                     }
