@@ -28,44 +28,44 @@ public class BeritaRepository {
     }
 
     public MutableLiveData<BeritaResponse> getBerita(String page, String limit){
-        MutableLiveData<BeritaResponse> mutableLiveData = new MutableLiveData<>();
+        MutableLiveData<BeritaResponse> beritaData = new MutableLiveData<>();
         beritaApi.getBerita(page,limit)
                 .enqueue(new Callback<BeritaResponse>() {
                     @Override
                     public void onResponse(Call<BeritaResponse> call, Response<BeritaResponse> response) {
                         if (response.isSuccessful()){
-                            Log.v("Success fetch: ",response.body().toString());
-                            mutableLiveData.setValue(response.body());
+                            Log.v("LogGetBerita: ",response.body().toString());
+                            beritaData.setValue(response.body());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<BeritaResponse> call, Throwable t) {
                         Log.v("Error fetch: ",t.getMessage());
-                        mutableLiveData.setValue(null);
+                        beritaData.setValue(null);
                     }
                 });
-        return mutableLiveData;
+        return beritaData;
     }
 
-    public MutableLiveData<BeritaResponse> postBerita(BeritaModel model){
-        MutableLiveData<BeritaResponse> mutableLiveData=new MutableLiveData<>();
+    public MutableLiveData<BeritaResponse> addBerita(BeritaModel model){
+        MutableLiveData<BeritaResponse> beritaData=new MutableLiveData<>();
         beritaApi.addBerita(model)
                 .enqueue(new Callback<BeritaResponse>() {
                     @Override
                     public void onResponse(Call<BeritaResponse> call, Response<BeritaResponse> response) {
                         if (response.isSuccessful()){
-                            Log.v("Success post : ",response.body().toString());
-                            mutableLiveData.setValue(response.body());
+                            Log.v("PostData: ",response.body().toString());
+                            beritaData.setValue(response.body());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<BeritaResponse> call, Throwable t) {
                         Log.v("Error post : ",t.getMessage());
-                        mutableLiveData.setValue(null);
+                        beritaData.setValue(null);
                     }
                 });
-        return  mutableLiveData;
+        return  beritaData;
     }
 }

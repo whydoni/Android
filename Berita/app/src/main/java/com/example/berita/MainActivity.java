@@ -35,12 +35,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         initData();
+        onCLickGroup();
+    }
 
+    void onCLickGroup() {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -54,16 +57,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        parse(data.getStringExtra("data"));
-
-    }
-
-    private void parse( String data){
         Gson gson = new Gson();
-        BeritaModel model = gson.fromJson(data , BeritaModel.class);
+        BeritaModel model = gson.fromJson("data" , BeritaModel.class);
         beritas.add(model);
         beritaAdapter.notifyDataSetChanged();
     }
+
 
     private void initData(){
         if (beritaAdapter==null){

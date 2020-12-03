@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.berita.R;
 import com.example.berita.model.BeritaModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,9 @@ public class BeritaAdapter extends RecyclerView.Adapter<BeritaAdapter.BeritaView
     public void onBindViewHolder(@NonNull BeritaViewHolder holder, int position) {
         holder.titleView.setText(arrlist.get(position).getTitle());
         holder.descView.setText(arrlist.get(position).getCategory());
-        Glide.with(context).load(arrlist.get(position).getUrl()).placeholder(android.R.drawable.progress_indeterminate_horizontal).error(android.R.drawable.stat_notify_error).into(holder.imageView);
+//        Glide.with(context).load(arrlist.get(position).getUrl()).placeholder(android.R.drawable.progress_indeterminate_horizontal).error(android.R.drawable.stat_notify_error).into(holder.imageView);
+        String imageUri = arrlist.get(position).getUrl();
+        Picasso.get().load(imageUri).into(holder.imageView);
     }
 
     @Override

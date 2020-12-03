@@ -16,7 +16,6 @@ import com.example.berita.viewmodel.BeritaViewModel;
 import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {
-    private ArrayList<BeritaModel> arrlistBeritaModel = new ArrayList<>();
     private AppCompatEditText titleEditText, descEditText, urlEditText;
     private ArrayList<BeritaModel> arrayList = new ArrayList<>();
     private static String json="";
@@ -43,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         beritaModel.setCategory(category);
         beritaModel.setUrl(url);
 
-        beritaViewModel.postBerita(this.beritaModel).observe(this, beritaResponse -> {
+        beritaViewModel.addBerita(beritaModel).observe(this, beritaResponse -> {
             message=beritaResponse.getMessage();
             Toast.makeText(getApplicationContext(),message, Toast.LENGTH_SHORT).show();
             finish();
@@ -62,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        initView();
         return true;
     }
 

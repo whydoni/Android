@@ -24,11 +24,11 @@ public class BeritaViewModel extends ViewModel {
         return mutableLiveData;
     }
 
-    public LiveData<BeritaResponse> postBerita(BeritaModel model){
+    public LiveData<BeritaResponse> addBerita(BeritaModel model){
         if (mutableLiveData==null){
             beritaRepository =BeritaRepository.getInstance();
         }
-        mutableLiveData = beritaRepository.postBerita(model);
+        mutableLiveData = beritaRepository.addBerita(model);
         return mutableLiveData;
     }
     public void refresh(String page, String limit ){
