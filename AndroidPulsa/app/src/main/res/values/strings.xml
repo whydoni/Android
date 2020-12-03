@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android-Pulsa</string>
+    <string name="pulsa">pulsa</string>
+    <string name="rincian">Rincian Pembelian</string>
+    <string name="bayar">BAYAR SEKARANG</string>
+    <string name="desc">Seluruh transaksi kamu cepat dan aman. Dengan melanjutkan proses ini, kamu menyetujui Syarat dan Ketentuan</string>
+</resources>
