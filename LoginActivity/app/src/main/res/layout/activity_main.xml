@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#01abe8"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo_jenius"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_baseline_wifi_24"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v 1.01"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_jenius"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/ic_outline_account_circle_24"
+        android:hint=" Username"
+        android:textColorHint="#F4F4F4"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username_et"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:drawableLeft="@drawable/ic_outline_lock_24"
+        android:hint=" Password"
+        android:textColor="@color/white"
+        android:singleLine="true"
+        android:textColorHint="#F4F4F4"
+        android:backgroundTint="@color/white"
+        android:drawableRight="@drawable/ic_outline_remove_red_eye_24"/>
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forget"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="#F4F4F4"
+        android:layout_below="@id/password_et"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/forgot_password"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="@string/reset"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_bt"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="250dp"
+        android:layout_below="@id/reset_button"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_transparent"
+        android:text="@string/submit"
+        android:textColor="#E1E1E1"/>
+
+</RelativeLayout>
